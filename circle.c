@@ -10,6 +10,7 @@ void rgb(int r, int g, int b, FILE *fp) {
     (void) fwrite(color, 1, 3, fp);
 }
 
+
 int main(void)
 {
   const int dimx = 1000, dimy = 1000;
@@ -25,7 +26,7 @@ int main(void)
     for (i = 0; i < dimx; ++i)
     {
         if (pow(i - dimx / 2, 2) + pow(j - dimy / 2, 2) <= pow(circle_d, 2)) {
-            rgb(255, 0, 0, fp);
+            rgb(0, 0, abs(dimx / 2 - i), fp);
         } else {
             rgb(255, 255, 255, fp);
         }
